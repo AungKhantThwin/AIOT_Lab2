@@ -35,12 +35,30 @@ def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
     display_main_menu()
     num_list = get_user_input()
-    print("Average value : ", str(calc_average(num_list)))
     [min_val, max_val] = find_min_max(num_list)
-    print("Minimum value : ", min_val)
-    print("Maximum valiue : ", max_val)
     num_list.sort() #sort temperature
-    print("Median value : ", calc_median_temperature(num_list))
+    index = 9
+    while(index != 0):
+        print("1 -> Calcualte Average")
+        print("2 -> Max")
+        print("3 -> Min")
+        print("4 -> Median")
+        print("0 -> Exit")
+        choice = int(input())
+        if (choice == 1):
+            print("Average value : ", str(calc_average(num_list)))
+        elif (choice == 2):
+            print("Maximum value : ", max_val)
+        elif (choice == 3):
+            print("Minimum value : ", min_val)
+        elif (choice == 4):
+             print("Median value : ", calc_median_temperature(num_list))
+        elif (choice == 0):
+            index = 0
+        else: print ("No such options")
+
+    
+    print("Program ended")
 
 if __name__ == "__main__":
     main()
